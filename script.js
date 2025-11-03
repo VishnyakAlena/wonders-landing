@@ -21,21 +21,13 @@ burgerIcon.addEventListener('click', () => {
     else {
         hiddenBurgerMenu()
 
-        setTimeout(() => {
-            burgerMenu.classList.remove('closing');
-            isOpen = false;
-        }, 400);
+
     }
 })
 
 links.forEach(link => {
     link.addEventListener('click', () => {
         hiddenBurgerMenu()
-
-        setTimeout(() => {
-            burgerMenu.classList.remove('closing');
-            isOpen = false;
-        }, 10);
     })
 })
 
@@ -46,4 +38,8 @@ function hiddenBurgerMenu() {
     burgerLine1.style.transform = 'initial';
     burgerLine3.style.transform = 'initial';
     body.classList.remove('lock-scroll');
+    setTimeout(() => {
+        burgerMenu.classList.remove('closing');
+        isOpen = false;
+    }, 400);
 }
