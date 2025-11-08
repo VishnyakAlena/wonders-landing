@@ -57,34 +57,22 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
-    gap: 96px;
-}
-
-.header-container a {
-    padding: 0 10px;
-}
-
-.header-navigation a:hover {
-    background: rgba(221, 236, 255, 0.5);
-    border-radius: 10px;
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
+    gap: clamp(12px, 2vw, 96px);
 }
 
 .logo-and-text {
-    max-width: 50%;
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .logo-icon {
-    width: 73px;
+    width: clamp(62px, 5.2vw, 73px);
 }
 
 .logo-text {
-    font-size: 2.125rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.125rem);
 }
 
 .logo-and-text:hover {
@@ -93,15 +81,27 @@ a {
 }
 
 .header-navigation {
-    max-width: 50%;
-    width: 100%;
+    width: fit-content;
     display: flex;
     justify-content: space-between;
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1.75vw, 1.25rem);
     line-height: 135%;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-left: 32px;
+    padding-left: 10px;
+    gap: clamp(2px, 0.3vw, 10px);
+}
+
+.header-navigation a {
+    padding-inline: clamp(5px, 0.7vw, 10px);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.header-navigation a:hover {
+    background: rgba(221, 236, 255, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .burger-icon {
@@ -219,5 +219,8 @@ a {
     }
     .burger-menu nav a {
         font-size: 2rem;
+    }
+    .logo-text {
+        display: none
     }
 }
