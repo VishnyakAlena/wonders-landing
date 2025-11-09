@@ -43,3 +43,68 @@ function hiddenBurgerMenu() {
         isOpen = false;
     }, 400);
 }
+
+
+
+
+
+
+const decreaseBtn = document.getElementById('decrease');
+const increaseBtn = document.getElementById('increase');
+const valueDisplay = document.getElementById('value');
+
+let value = 1;
+
+decreaseBtn.addEventListener('click', () => {
+    if (value > 1) value--;
+    valueDisplay.textContent = value.toString();
+});
+
+increaseBtn.addEventListener('click', () => {
+    if (value < 12) value++;
+    valueDisplay.textContent = value.toString();
+});
+
+
+
+
+//Departure
+
+const departureInput = document.getElementById('departure-input')
+const departureClear =document.getElementById('clear-button-departure')
+
+
+function departureToggleClearButton() {
+    departureClear.style.display = departureInput.value ? 'block' : 'none';
+}
+
+departureInput.addEventListener('input', departureToggleClearButton);
+
+
+//Очистить поле при клике
+departureClear.addEventListener('click', () => {
+    departureInput.value = '';
+    departureClear.style.display = 'none';
+    departureInput.focus();
+})
+
+// Arrival
+
+const arrivalInput = document.getElementById('arrival-input')
+const arrivalClear = document.getElementById('clear-button-arrival')
+
+
+// Появление крестика при вводе
+function arrivalToggleClearButton() {
+    arrivalClear.style.display = arrivalInput.value ? 'block' : 'none';
+}
+
+arrivalInput.addEventListener('input', arrivalToggleClearButton);
+
+
+//Очистить поле при клике
+arrivalClear.addEventListener('click', () => {
+    arrivalInput.value = '';
+    arrivalClear.style.display = 'none';
+    arrivalInput.focus();
+})

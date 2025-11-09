@@ -38,6 +38,83 @@
                     </nav>
                 </div>
             </header>
+            <section>
+                <div class="container container-ticket-order">
+                    <div class="ticket-order">
+                        <div class="ticket-order-content">
+                            <H1>Skip the Climbing, <br /> Catch the Bus</H1>
+                            <p class="ticket-order-text">We sell tickets to the best seats in the house - houses on wheels, that is! <br />  Get ready for jaw-dropping views without breaking a sweat.</p>
+
+                            <form action="./bus-list.html" target="_blank" class="ticket-order-form">
+                                <div class="choose-trip">
+                                    <label>
+                                        <input type="radio" name="type-trip" value="round-trip" checked> Round trip
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="type-trip" value="one-way"> One Way
+                                    </label>
+                                    <div class="person-quantity">
+                                        <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="9" cy="7" r="4" fill="#0578FF"/>
+                                            <path d="M3 20C1.89543 20 0.974346 19.0907 1.24685 18.0202C2.12788 14.5595 5.26504 12 9 12C12.735 12 15.8721 14.5595 16.7531 18.0202C17.0257 19.0907 16.1046 20 15 20H3Z" fill="#0578FF"/>
+                                        </svg>
+                                        <div class="counter">
+                                            <button type="button" class="change-counter counter-decrease" id="decrease">-</button>
+                                            <span id="value">1</span>
+                                            <button type="button" class="change-counter counter-increase" id="increase">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-station">
+                                    <div class="input-container station-input-container">
+                                        <label for="departure-input">Departure</label>
+                                        <div class="input-wrapper">
+                                            <input id="departure-input" class="departure-input" placeholder="Your City/Station" type="text" autocomplete="off">
+                                            <span id="clear-button-departure" class="clear-btn">&times;</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="input-container station-input-container">
+                                        <label for="arrival-input">Arrival</label>
+                                        <div class="input-wrapper">
+                                            <input id="arrival-input" class="arrival-input" placeholder="Where to?" type="text" autocomplete="off">
+                                            <span id="clear-button-arrival" class="clear-btn">&times;</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="choose-date">
+                                    <div class="input-container date-input-container">
+                                        <H4>Pick your lucky day</H4>
+                                        <button id="departure-date-button" class="date-input-button" type="button">
+                                            <img src="./assets/icons/Calendar.svg" alt="calender icon">
+                                            <span id="departure-text" class="date-label">Depart</span>
+                                        </button>
+                                    </div>
+                                    <div class="input-container date-input-container">
+                                        <H4 class="hidden-title">Pick your return day</H4>
+                                        <button id="return-date-button" class="date-input-button" type="button">
+                                            <img src="./assets/icons/Calendar.svg" alt="calender icon">
+                                            <span id="return-text" class="date-label">Return</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <button class="ticket-order-button" type="submit">Find My Alpine Ride</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="ticket-order ticket-order-img">
+                        <img class="hero-img" src="./assets/images/Hero.png" alt="mountains picture">
+                    </div>
+                </div>
+            </section>
+
+
             <section id="sectionMobileApp">
 
             </section>

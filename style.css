@@ -81,7 +81,8 @@ a {
 }
 
 .header-navigation {
-    width: fit-content;
+    max-width: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-size: clamp(1.1rem, 1.75vw, 1.25rem);
@@ -192,6 +193,239 @@ a {
 
 
 
+.container-ticket-order {
+    padding-top: 64px;
+    padding-bottom: 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.ticket-order {
+    max-width: calc(50% - 16px);
+}
+
+.ticket-order-content {
+    width: 100%;
+}
+
+.hero-img {
+    width: 90%;
+    max-width: 640px;
+    margin-inline: 36px;
+    object-fit: contain;
+    transform: rotateY(180deg);
+}
+
+H1 {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 4rem);
+}
+
+.ticket-order-text {
+    margin: 32px 0;
+    font-size: clamp(0.5rem, 1.05vw, 1rem);
+}
+
+
+.ticket-order-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 24px;
+}
+
+.choose-trip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 24px;
+    height: 53px;
+    background: var(--white);
+    font-weight: 500;
+    line-height: 100%;
+    gap: 0.8rem;
+    font-size: clamp(0.6rem, 1.6vw, 1.2rem);
+
+}
+
+.choose-trip label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+    white-space: nowrap;
+    height: 100%; /* чтобы занять всю высоту grid-ячейки */
+}
+
+.person-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    height: 100%;
+}
+
+.counter {
+    width: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    background: var(--white);
+    gap: 0.2rem;
+}
+
+.counter-decrease {
+    color: var(--primary-grey);
+}
+
+.counter-increase {
+    color: var(--primary-blue);
+}
+
+.counter span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 157%;
+    text-align: center;
+}
+
+.change-counter {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    background: var(--white);
+}
+
+.change-counter:hover {
+    background-color: #f5f5f5;
+}
+
+.choose-station, .choose-date {
+    max-width: 100%;
+    display: flex;
+    row-gap: 24px;
+    justify-content: space-between;
+}
+
+.ticket-order-button {
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 16px 24px;
+    width: 100%;
+    background: var(--primary-blue);
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.station-input-container, .date-input-container {
+    width: calc(50% - 16px);
+}
+
+.input-container label, H4{
+    font-weight: 600;
+    font-size: clamp(0.4rem, 1.4vw, 1rem);
+    line-height: 150%;
+}
+input {
+    cursor: pointer;
+}
+
+.input-container input {
+    border: none;
+    border-radius: 10px;
+    padding: 16px 24px;
+    height: 53px;
+    background: var(--white);
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 150%;
+}
+
+.input-container input:focus {
+    outline: none;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
+}
+
+.departure-input::placeholder, .arrival-input::placeholder {
+    color: var(--primary-grey);
+    font-size: clamp(0.4rem, 1.4vw, 0.875rem);
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding-right: 36px;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+
+.hidden-title {
+    visibility: hidden;
+}
+
+.date-input-button {
+    padding: 15px 24px;
+    background: var(--white);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 53px;
+}
+.date-label {
+    font-size: clamp(0.4rem, 1.3vw, 0.875rem);
+    color: var(--primary-grey);
+    line-height: 1;
+}
+
+.date-input-button img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+
+
+
+
 
 
 
@@ -206,6 +440,21 @@ a {
     .header-navigation {
         display: none;
     }
+    .ticket-order {
+        max-width: 100%;
+        width: 100%;
+    }
+    .ticket-order-img {
+        display: none;
+    }
+    H1 {
+        font-size: clamp(1.5rem, 8.5vw, 4rem);
+    }
+    .ticket-order-text {
+        font-size: clamp(0.3rem, 1.9vw, 1rem);
+    }
+
+
 }
 
 @media screen and (max-width: 360px) {
@@ -222,5 +471,17 @@ a {
     }
     .logo-text {
         display: none
+    }
+    .station-input-container, .date-input-container {
+        width: 100%;
+    }
+    .choose-station, .choose-date {
+        flex-wrap: wrap;
+    }
+    .hidden-title {
+        display: none;
+    }
+    .ticket-order-text {
+        font-size: clamp(0.3rem, 2.2vw, 0.6875rem);
     }
 }
