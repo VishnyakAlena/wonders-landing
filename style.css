@@ -313,6 +313,10 @@ H1 {
     justify-content: space-between;
 }
 
+.choose-station {
+    position: relative;
+}
+
 .ticket-order-button {
     border-radius: 10px;
     border: none;
@@ -321,7 +325,7 @@ H1 {
     width: 100%;
     background: var(--primary-blue);
     font-weight: 700;
-    font-size: 20px;
+    font-size: clamp(1.1rem, 2.1vw, 1.25rem);
     text-transform: capitalize;
     color: var(--white);
 }
@@ -338,7 +342,7 @@ H1 {
 
 .input-container label, H4{
     font-weight: 600;
-    font-size: clamp(0.4rem, 1.7vw, 1rem);
+    font-size: clamp(0.4rem, 1.6vw, 1rem);
     line-height: 150%;
 }
 input {
@@ -387,7 +391,101 @@ input[type="text"] {
     transition: opacity 0.3s ease;
 }
 
+.autocomplete-dropdown {
+    margin-top: 12px;
+    width: 100%;
+    list-style-type: none;
+    padding: 12px;
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
+    animation: dropdownAppear 0.1s ease-in-out;
+}
 
+.autocomplete-dropdown li {
+    padding: 4px 12px;
+    font-size: clamp(0.4rem, 1.4vw, 0.875rem);
+    line-height: 150%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.autocomplete-dropdown li:hover {
+    background: var(--primary-grey);
+    color: var(--white);
+}
+
+.not-found-span {
+    font-size: 0.875rem;
+    color: var(--primary-grey);
+}
+
+@keyframes dropdownAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(221, 236, 255, 0.3);
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px; /* ограничение ширины */
+    margin-top: clamp(-120px, -5vh, -80px); /* примерное позиционирование над календарём */
+    text-align: center;
+}
+
+.modal-content H4, .modal-content button {
+    font-size: clamp(0.4rem, 1.2vw, 0.8rem);
+}
+
+.modal-content button {
+    border: none;
+    background: none;
+    font-weight: 500;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 0;
+    padding: 3px 10px;
+}
+
+.modal-content button:hover {
+    background: rgba(221, 236, 255, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
 
 
 
@@ -428,6 +526,17 @@ input[type="text"] {
 
 
 
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
     .container {
@@ -455,8 +564,11 @@ input[type="text"] {
     .input-container label, H4{
         font-size: clamp(0.4rem, 3vw, 1rem);
     }
-    .departure-input::placeholder, .arrival-input::placeholder, .date-label {
+    .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
         font-size: clamp(0.4rem, 3vw, 0.875rem);
+    }
+    .modal-content H4, .modal-content button {
+        font-size: clamp(0.4rem, 2vw, 0.8rem);
     }
 }
 
@@ -490,7 +602,13 @@ input[type="text"] {
     .input-container label, H4{
         font-size: clamp(0.4rem, 4vw, 1rem);
     }
-    .departure-input::placeholder, .arrival-input::placeholder, .date-label {
+    .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
         font-size: clamp(0.4rem, 4vw, 0.875rem);
+    }
+    .modal-content H4, .modal-content button {
+        font-size: clamp(0.4rem, 2vw, 0.6rem);
+    }
+    .ticket-order-button {
+        font-size: clamp(0.6rem, 4vw, 1.25rem);
     }
 }

@@ -72,7 +72,9 @@
                                             <input id="departure-input" class="departure-input" placeholder="Your City/Station" type="text" autocomplete="off">
                                             <span id="clear-button-departure" class="clear-btn">&times;</span>
                                         </div>
+                                        <ul id="departure-autocomplete-dropdown" class="autocomplete-dropdown hidden">
 
+                                        </ul>
                                     </div>
                                     <div class="input-container station-input-container">
                                         <label for="arrival-input">Arrival</label>
@@ -80,7 +82,15 @@
                                             <input id="arrival-input" class="arrival-input" placeholder="Where to?" type="text" autocomplete="off">
                                             <span id="clear-button-arrival" class="clear-btn">&times;</span>
                                         </div>
+                                        <ul id="arrival-autocomplete-dropdown" class="autocomplete-dropdown hidden">
 
+                                        </ul>
+                                    </div>
+                                    <div id="custom-alert-station" class="modal">
+                                        <div class="modal-content">
+                                            <H4>The arrival station must be different from the departure station.</H4>
+                                            <button type="button" onclick="closeCheckStations()">OK</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="choose-date">
