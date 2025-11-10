@@ -248,8 +248,6 @@ H1 {
     font-weight: 500;
     line-height: 100%;
     gap: 0.8rem;
-    font-size: clamp(0.6rem, 1.6vw, 1.2rem);
-
 }
 
 .choose-trip label {
@@ -259,6 +257,7 @@ H1 {
     justify-content: center;
     white-space: nowrap;
     height: 100%; /* чтобы занять всю высоту grid-ячейки */
+    font-size: clamp(0.6rem, 1.6vw, 0.875rem);
 }
 
 .person-quantity {
@@ -339,7 +338,7 @@ H1 {
 
 .input-container label, H4{
     font-weight: 600;
-    font-size: clamp(0.4rem, 1.4vw, 1rem);
+    font-size: clamp(0.4rem, 1.7vw, 1rem);
     line-height: 150%;
 }
 input {
@@ -453,8 +452,12 @@ input[type="text"] {
     .ticket-order-text {
         font-size: clamp(0.3rem, 1.9vw, 1rem);
     }
-
-
+    .input-container label, H4{
+        font-size: clamp(0.4rem, 3vw, 1rem);
+    }
+    .departure-input::placeholder, .arrival-input::placeholder, .date-label {
+        font-size: clamp(0.4rem, 3vw, 0.875rem);
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -483,5 +486,11 @@ input[type="text"] {
     }
     .ticket-order-text {
         font-size: clamp(0.3rem, 2.2vw, 0.6875rem);
+    }
+    .input-container label, H4{
+        font-size: clamp(0.4rem, 4vw, 1rem);
+    }
+    .departure-input::placeholder, .arrival-input::placeholder, .date-label {
+        font-size: clamp(0.4rem, 4vw, 0.875rem);
     }
 }
