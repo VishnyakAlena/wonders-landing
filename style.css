@@ -234,6 +234,7 @@ H1 {
     flex-direction: column;
     max-width: 100%;
     gap: 24px;
+    position: relative;
 }
 
 .choose-trip {
@@ -260,12 +261,36 @@ H1 {
     font-size: clamp(0.6rem, 1.6vw, 0.875rem);
 }
 
+.radio-option input[type="radio"] {
+    display: none; /* скрываем стандартный флажок */
+}
+
+.custom-radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ccc; /* серый фон для невыбранного */
+    transition: all 0.2s ease;
+
+}
+
+.radio-option input[type="radio"]:checked + .custom-radio {
+    background-color: transparent;
+    border: 3px solid #0578ff;
+}
+
+
+
 .person-quantity {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
     height: 100%;
+}
+
+.person-icon {
+    width: clamp(8px, 2vw, 18px);
 }
 
 .counter {
@@ -278,17 +303,17 @@ H1 {
     gap: 0.2rem;
 }
 
-.counter-decrease {
+.counter-decrease, .counter-increase {
     color: var(--primary-grey);
 }
 
-.counter-increase {
+.active-button {
     color: var(--primary-blue);
 }
 
 .counter span {
     font-weight: 500;
-    font-size: 14px;
+    font-size: clamp(0.5rem, 1.5vw, 0.875rem);
     line-height: 157%;
     text-align: center;
 }
@@ -435,6 +460,187 @@ input[type="text"] {
     }
 }
 
+.date-input-button {
+    padding: 15px 24px;
+    background: var(--white);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 53px;
+}
+.date-label {
+    font-size: clamp(0.4rem, 1.3vw, 0.875rem);
+    color: var(--primary-grey);
+    line-height: 1;
+}
+
+.date-input-button img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.selected-border {
+    border: 1px solid var(--primary-blue-train);
+}
+
+.calendar {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 24px 32px;
+    width: 100%;
+    position: relative;
+}
+
+.calendar .months {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.calendar .month {
+    min-width: 0;
+    width: 100%;
+}
+
+.calendar-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+.calendar-header .month-year {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-black);
+    font-size: clamp(0.4rem, 1vw, 1rem);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nav-btn {
+    height: clamp(15px, 2.5vw, 20px);
+    width: 20px;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-btn img {
+    max-width: 80%;
+    height: auto;
+}
+
+.nav-btn:hover {
+    background: #F1F3F7;
+}
+
+.header-spacer { width: clamp(15px, 2.5vw, 20px); }
+
+.calendar-body .weekdays, .calendar-body .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 4px;
+}
+
+
+
+.empty, .weekdays span, .date {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* делает ячейку квадратной */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+}
+
+.empty, .date {
+    font-size: clamp(0.4rem, 1.3vw, 1rem);
+}
+
+.weekdays span {
+    font-size: clamp(0.4rem, 1.2vw, 0.95rem);
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-body .dates .date.range-start {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.calendar-body .dates .date.range-end {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.calendar-body .dates .date:hover {
+    background: #EFF4FF;
+    color: var(--primary-blue-train);
+}
+
+.calendar-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 16px;
+    gap: 16px;
+}
+
+.calendar-body .dates .date.selected-date .circle {
+    background-color: #0578FF;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.date.in-range {
+    background-color: #F1F3F7;
+    color: var(--primary-black);
+    border-radius: 0;
+}
+
+.reset-btn {
+    border: none;
+    background: transparent;
+    color: var(--primary-grey);
+    cursor: pointer;
+}
+
+.apply-btn {
+    border: none;
+    background: var(--primary-blue-train);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reset-btn:hover, .apply-btn:hover {
+    transform: scale(1.1);
+}
+
+
 .modal {
     position: absolute;
     top: 0; left: 0;
@@ -461,12 +667,22 @@ input[type="text"] {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 800px; /* ограничение ширины */
-    margin-top: clamp(-120px, -5vh, -80px); /* примерное позиционирование над календарём */
     text-align: center;
 }
 
+.modal-stations {
+    margin-top: -14vh;
+}
+
+.modal-dates, .modal-choose {
+    margin-top: -25vh;
+}
+
+.modal-submit {
+    margin-top: -10vh;
+}
 .modal-content H4, .modal-content button {
-    font-size: clamp(0.4rem, 1.2vw, 0.8rem);
+    font-size: clamp(0.4rem, 1vw, 0.8rem);
 }
 
 .modal-content button {
@@ -495,35 +711,20 @@ input[type="text"] {
     visibility: hidden;
 }
 
-.date-input-button {
-    padding: 15px 24px;
-    background: var(--white);
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 10px;
-    height: 53px;
-}
-.date-label {
-    font-size: clamp(0.4rem, 1.3vw, 0.875rem);
-    color: var(--primary-grey);
-    line-height: 1;
+
+
+
+
+
+.date-input-button.disabled {
+    background: rgba(5, 120, 255, 0.1);
+    cursor: not-allowed !important;
+
 }
 
-.date-input-button img {
-    width: 20px;
-    height: 20px;
-    display: block;
+.not-allowed {
+    cursor: not-allowed !important;
 }
-
-
-
-
-
-
 
 
 .hidden {
@@ -558,6 +759,12 @@ input[type="text"] {
     H1 {
         font-size: clamp(1.5rem, 8.5vw, 4rem);
     }
+    .person-icon {
+        width: clamp(12px, 2.5vw, 18px);
+    }
+    .counter span {
+        font-size: clamp(0.5rem, 2.5vw, 0.875rem);
+    }
     .ticket-order-text {
         font-size: clamp(0.3rem, 1.9vw, 1rem);
     }
@@ -567,8 +774,14 @@ input[type="text"] {
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
         font-size: clamp(0.4rem, 3vw, 0.875rem);
     }
+    .calendar-header .month-year, .empty, .weekdays span, .date {
+        font-size: clamp(0.4rem, 2vw, 1rem);
+    }
     .modal-content H4, .modal-content button {
         font-size: clamp(0.4rem, 2vw, 0.8rem);
+    }
+    .modal-dates {
+        margin-top: -26vh;
     }
 }
 
@@ -605,8 +818,21 @@ input[type="text"] {
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
         font-size: clamp(0.4rem, 4vw, 0.875rem);
     }
+    .calendar {
+        padding: 16px;
+    }
+    .calendar .months {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .calendar-header .month-year, .empty, .weekdays span, .date {
+        font-size: clamp(0.4rem, 3.5vw, 1rem);
+    }
     .modal-content H4, .modal-content button {
         font-size: clamp(0.4rem, 2vw, 0.6rem);
+    }
+    .modal-dates {
+        margin-top: -38vh;
     }
     .ticket-order-button {
         font-size: clamp(0.6rem, 4vw, 1.25rem);
