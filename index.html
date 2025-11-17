@@ -38,6 +38,162 @@
                     </nav>
                 </div>
             </header>
+            <section>
+                <div class="container container-ticket-order">
+                    <div class="ticket-order">
+                        <div class="ticket-order-content">
+                            <H1>Skip the Climbing, <br /> Catch the Bus</H1>
+                            <p class="ticket-order-text">We sell tickets to the best seats in the house - houses on wheels, that is! <br />  Get ready for jaw-dropping views without breaking a sweat.</p>
+
+                            <form action="./bus-list.html" target="_blank" class="ticket-order-form">
+                                <div class="choose-trip">
+                                    <label class="radio-option">
+                                        <input type="radio" name="type-trip" value="round-trip">
+                                        <span class="custom-radio"></span>
+                                        Round trip
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="type-trip" value="one-way">
+                                        <span class="custom-radio"></span>
+                                        One Way
+                                    </label>
+                                    <div class="person-quantity">
+                                        <img class="person-icon" src="./assets/icons/person_solid.svg" alt="person solid">
+                                        <div class="counter">
+                                            <button type="button" class="change-counter counter-decrease" id="decrease">-</button>
+                                            <span id="value">0</span>
+                                            <button type="button" class="change-counter counter-increase active-button" id="increase">+</button>
+                                        </div>
+                                    </div>
+                                    <div id="custom-alert-submit" class="modal">
+                                        <div class="modal-content modal-submit">
+                                            <H4>Please complete all required fields.</H4>
+                                            <button type="button" onclick="closeAlertSubmit()">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-station">
+                                    <div class="input-container station-input-container">
+                                        <label for="departure-input">Departure</label>
+                                        <div class="input-wrapper">
+                                            <input id="departure-input" class="departure-input" placeholder="Your City/Station" type="text" autocomplete="off">
+                                            <span id="clear-button-departure" class="clear-btn">&times;</span>
+                                        </div>
+                                        <ul id="departure-autocomplete-dropdown" class="autocomplete-dropdown hidden">
+
+                                        </ul>
+                                    </div>
+                                    <div class="input-container station-input-container">
+                                        <label for="arrival-input">Arrival</label>
+                                        <div class="input-wrapper">
+                                            <input id="arrival-input" class="arrival-input" placeholder="Where to?" type="text" autocomplete="off">
+                                            <span id="clear-button-arrival" class="clear-btn">&times;</span>
+                                        </div>
+                                        <ul id="arrival-autocomplete-dropdown" class="autocomplete-dropdown hidden">
+
+                                        </ul>
+                                    </div>
+                                    <div id="custom-alert-station" class="modal">
+                                        <div class="modal-content modal-stations">
+                                            <H4>The arrival station must be different from the departure station.</H4>
+                                            <button type="button" onclick="closeCheckStations()">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose-date">
+                                    <div class="input-container date-input-container">
+                                        <H4>Pick your lucky day</H4>
+                                        <button id="departure-date-button" class="date-input-button" type="button">
+                                            <img src="./assets/icons/Calendar.svg" alt="calender icon">
+                                            <span id="departure-text" class="date-label">Depart</span>
+                                        </button>
+                                    </div>
+                                    <div class="input-container date-input-container">
+                                        <H4 class="hidden-title">Pick your return day</H4>
+                                        <button id="return-date-button" class="date-input-button" type="button">
+                                            <img src="./assets/icons/Calendar.svg" alt="calender icon">
+                                            <span id="return-text" class="date-label">Return</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                                <div class="calendar hidden">
+                                    <div class="months">
+                                        <div class="left-month month">
+                                            <div class="calendar-header">
+                                                <button type="button" id="prev-month-btn" class="nav-btn prev-month-button" aria-label="Previous month">
+                                                    <img src="./assets/icons/Arrow-left.svg" alt="arrow left icon">
+                                                </button>
+                                                <span id="left-month-year" class="month-year left-month-year">December 2025</span>
+                                                <div class="header-spacer"></div>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="weekdays">
+                                                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                                                </div>
+                                                <div id="curr-month-dates" class="dates curr-month-dates">
+                                                    <button class="date">1</button><button class="date">2</button><button class="date">3</button><button class="date">4</button><button class="date">5</button><button class="date">6</button><button class="date">7</button>
+                                                    <button class="date">8</button><button class="date">9</button><button class="date">10</button><button class="date">11</button><button class="date">12</button><button class="date">13</button><button class="date">14</button>
+                                                    <button class="date">15</button><button class="date">16</button><button class="date">17</button><button class="date">18</button><button class="date">19</button><button class="date">20</button><button class="date">21</button>
+                                                    <button class="date">22</button><button class="date">23</button><button class="date">24</button><button class="date">25</button><button class="date">26</button><button class="date">27</button><button class="date">28</button>
+                                                    <button class="date">29</button><button class="date">30</button><button class="date">31</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right-month month">
+                                            <div class="calendar-header">
+                                                <div class="header-spacer"></div>
+                                                <span id="right-month-year" class="month-year right-month-year">January 2025</span>
+                                                <button type="button" id="next-month-btn" class="nav-btn next-month-button" aria-label="Next month">
+                                                    <img src="./assets/icons/Arrow-right.svg" alt="arrow right icon">
+                                                </button>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="weekdays">
+                                                    <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                                                </div>
+                                                <div id="next-month-dates" class="dates next-month-dates">
+                                                    <span class="empty"></span><span class="empty"></span>
+                                                    <button class="date">1</button><button class="date">2</button><button class="date">3</button><button class="date">4</button>
+                                                    <button class="date">5</button><button class="date">6</button><button class="date">7</button><button class="date">8</button><button class="date">9</button><button class="date">10</button><button class="date">11</button>
+                                                    <button class="date">12</button><button class="date">13</button><button class="date">14</button><button class="date">15</button><button class="date">16</button><button class="date">17</button><button class="date">18</button>
+                                                    <button class="date">19</button><button class="date">20</button><button class="date">21</button><button class="date">22</button><button class="date">23</button><button class="date">24</button><button class="date">25</button>
+                                                    <button class="date">26</button><button class="date">27</button><button class="date">28</button><button class="date">29</button><button class="date">30</button><button class="date">31</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-footer">
+                                        <button id="reset-btn" class="reset-btn" type="button">Reset</button>
+                                        <button id="apply-btn" class="apply-btn" type="button">Apply</button>
+                                    </div>
+                                    <div id="custom-alert-dates" class="modal">
+                                        <div class="modal-content modal-dates">
+                                            <H4>The return date must be later than the departure date.</H4>
+                                            <button type="button" onclick="closeAlertDates()">OK</button>
+                                        </div>
+                                    </div>
+                                    <div id="custom-alert-choose" class="modal modal-choose">
+                                        <div class="modal-content">
+                                            <H4>You have not selected a departure and/or return date.</H4>
+                                            <button type="button" onclick="closeAlertChoose()">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button class="ticket-order-button" type="submit">Find My Alpine Ride</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="ticket-order ticket-order-img">
+                        <img class="hero-img" src="./assets/images/Hero.png" alt="mountains picture">
+                    </div>
+                </div>
+            </section>
+
+
             <section id="sectionMobileApp">
 
             </section>
