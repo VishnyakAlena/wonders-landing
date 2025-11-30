@@ -1,5 +1,7 @@
+/*Импорт шрифта*/
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Forum&family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Princess+Sofia&family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
+/*Свойства для всего документа*/
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +10,6 @@
     font-weight: 400;
     color: var(--primary-black);
 }
-
 :root {
     --primary-blue-train: #0578ff;
     --primary-black-train: #202020;
@@ -30,25 +31,36 @@
     --font-family: "Poppins", sans-serif;
     --second-family: "Inter", sans-serif;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 a {
     text-decoration: none;
 }
+H1 {
+    text-transform: capitalize;
+    font-size: clamp(1rem, 4dvw, 4rem);
+}
+H2 {
+    font-weight: 700;
+    font-size: clamp(0.8rem, 7dvw, 4rem);
+}
+H1, H2 {
+    font-weight: 700;
+    white-space: nowrap;
+}
 
+/*Блок с фоном градиентом, включает несколько секций*/
 .gradient-bg-container {
     background: linear-gradient(180deg, #f5f5f5 0%, #ddecff 50.17%, #f5f5f5 100%);
 }
-
+/*Свойства для всех блоков с классом container*/
 .container {
     max-width: 1440px;
     padding-inline: 64px;
     margin-inline: auto;
 }
-
+/*Блок заголовка*/
 .header-container {
     height: 116px;
     padding-top: 40px;
@@ -59,27 +71,22 @@ a {
     margin-inline: auto;
     gap: clamp(12px, 2dvw, 96px);
 }
-
 .logo-and-text {
     width: fit-content;
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
 .logo-icon {
     width: clamp(62px, 5.2dvw, 73px);
 }
-
 .logo-text {
     font-size: clamp(1.8rem, 3.5dvw, 2.125rem);
 }
-
 .logo-and-text:hover {
     text-decoration: none;
     background: none;
 }
-
 .header-navigation {
     max-width: 50%;
     width: 100%;
@@ -90,13 +97,11 @@ a {
     padding-left: 10px;
     gap: clamp(2px, 0.3dvw, 10px);
 }
-
 .header-navigation a {
     padding-inline: clamp(5px, 0.7dvw, 10px);
     text-align: center;
     white-space: nowrap;
 }
-
 .header-navigation a:hover {
     background: rgba(221, 236, 255, 0.5);
     border-radius: 10px;
@@ -104,7 +109,7 @@ a {
     transform: scale(1.1);
     transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
-
+/*Бургер меню*/
 .burger-icon {
     flex-direction: column;
     gap: 7px;
@@ -113,25 +118,20 @@ a {
     cursor: pointer;
     display: none;
 }
-
 .burger-icon .line1, .burger-icon .line2, .burger-icon .line3{
     height: 2px;
     background-color: var(--primary-blue-train);
 }
-
 .burger-icon .line2 {
     width: 16px;
 }
-
 .burger-icon .line1, .burger-icon .line3 {
     width: 30px;
     transition: transform 0.2s ease-out;
 }
-
 .lock-scroll {
     overflow: hidden;
 }
-
 .burger-menu {
     height: calc(100dvh - 116px);
     background-color: var(--primary-blue-train);
@@ -144,18 +144,15 @@ a {
     pointer-events: none;
     opacity: 0;
 }
-
 .burger-menu.active {
     opacity: 1;
     pointer-events: auto;
     animation: fromRightToLeft 0.4s ease-in-out;
 }
-
 .burger-menu.closing {
     pointer-events: none;
     animation: closingMenu 0.4s ease-in-out;
 }
-
 .burger-menu nav {
     margin-top: clamp(18px, 12dvh, 128px);
     display: flex;
@@ -163,12 +160,10 @@ a {
     padding-inline: 32px;
     gap: clamp(10px, 3dvh, 96px);
 }
-
 .burger-menu nav a {
     color: var(--white);
     font-size: 3rem;
 }
-
 @keyframes fromRightToLeft {
     from {
         transform: translateX(100%);
@@ -177,7 +172,6 @@ a {
         transform: translateX(0);
     }
 }
-
 @keyframes closingMenu {
     from {
         opacity: 1;
@@ -189,6 +183,7 @@ a {
     }
 }
 
+/*Блок с формой для заказа*/
 .container-ticket-order {
     padding-top: 64px;
     padding-bottom: 128px;
@@ -196,15 +191,12 @@ a {
     justify-content: space-between;
     align-items: start;
 }
-
 .ticket-order {
     max-width: calc(50% - 16px);
 }
-
 .ticket-order-content {
     width: 100%;
 }
-
 .hero-img {
     width: 90%;
     max-width: 640px;
@@ -212,19 +204,11 @@ a {
     object-fit: contain;
     transform: rotateY(180deg);
 }
-
-H1 {
-    text-transform: capitalize;
-    font-weight: 700;
-    font-size: clamp(1.5rem, 4dvw, 4rem);
-}
-
 .ticket-order-text {
     margin: 32px 0;
     font-size: clamp(0.5rem, 1.05dvw, 1rem);
+    white-space: nowrap;
 }
-
-
 .ticket-order-form {
     display: flex;
     flex-direction: column;
@@ -232,7 +216,6 @@ H1 {
     gap: 24px;
     position: relative;
 }
-
 .choose-trip {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -246,7 +229,6 @@ H1 {
     line-height: 100%;
     gap: 0.8rem;
 }
-
 .choose-trip label {
     display: flex;
     align-items: center;
@@ -256,11 +238,9 @@ H1 {
     height: 100%; /* чтобы занять всю высоту grid-ячейки */
     font-size: clamp(0.6rem, 1.6dvw, 0.875rem);
 }
-
 .radio-option input[type="radio"] {
     display: none; /* скрываем стандартный флажок */
 }
-
 .custom-radio {
     width: 16px;
     height: 16px;
@@ -268,12 +248,10 @@ H1 {
     background-color: var(--primary-grey); /* серый фон для невыбранного */
     transition: all 0.2s ease;
 }
-
 .radio-option input[type="radio"]:checked + .custom-radio {
     background-color: transparent;
     border: 3px solid var(--primary-blue-train);
 }
-
 .person-quantity {
     display: flex;
     align-items: center;
@@ -281,11 +259,9 @@ H1 {
     gap: 0.4rem;
     height: 100%;
 }
-
 .person-icon {
     width: clamp(8px, 2dvw, 18px);
 }
-
 .counter {
     width: 48px;
     display: flex;
@@ -294,21 +270,17 @@ H1 {
     background: var(--white);
     gap: 0.2rem;
 }
-
 .counter-decrease, .counter-increase {
     color: var(--primary-grey);
 }
-
 .active-button {
     color: var(--primary-blue);
 }
-
 .counter span {
     font-weight: 500;
     font-size: clamp(0.5rem, 1.5dvw, 0.875rem);
     text-align: center;
 }
-
 .change-counter {
     width: 20px;
     height: 20px;
@@ -317,22 +289,18 @@ H1 {
     cursor: pointer;
     background: var(--white);
 }
-
 .change-counter:hover {
     background-color: #f5f5f5;
 }
-
 .choose-station, .choose-date {
     max-width: 100%;
     display: flex;
     row-gap: 24px;
     justify-content: space-between;
 }
-
 .choose-station {
     position: relative;
 }
-
 .ticket-order-button {
     border-radius: 10px;
     border: none;
@@ -345,17 +313,14 @@ H1 {
     text-transform: capitalize;
     color: var(--white);
 }
-
 .input-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-
 .station-input-container, .date-input-container {
     width: calc(50% - 16px);
 }
-
 .input-container label, H4{
     font-weight: 600;
     font-size: clamp(0.4rem, 1.6dvw, 1rem);
@@ -364,7 +329,6 @@ H1 {
 input {
     cursor: pointer;
 }
-
 .input-container input {
     border: none;
     border-radius: 10px;
@@ -375,28 +339,23 @@ input {
     font-size: 0.875rem;
     line-height: 150%;
 }
-
 .input-container input:focus {
     outline: none;
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
 }
-
 .departure-input::placeholder, .arrival-input::placeholder {
     color: var(--primary-grey);
     font-size: clamp(0.4rem, 1.4dvw, 0.875rem);
 }
-
 .input-wrapper {
     position: relative;
     width: 100%;
     max-width: 100%;
 }
-
 input[type="text"] {
     width: 100%;
     padding-right: 36px;
 }
-
 .clear-btn {
     position: absolute;
     right: 10px;
@@ -406,7 +365,6 @@ input[type="text"] {
     display: none;
     transition: opacity 0.3s ease;
 }
-
 .autocomplete-dropdown {
     margin-top: 12px;
     width: 100%;
@@ -420,7 +378,6 @@ input[type="text"] {
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.16);
     animation: dropdownAppear 0.1s ease-in-out;
 }
-
 .autocomplete-dropdown li {
     padding: 4px 12px;
     font-size: clamp(0.4rem, 1.4dvw, 0.875rem);
@@ -429,17 +386,14 @@ input[type="text"] {
     cursor: pointer;
     transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-
 .autocomplete-dropdown li:hover {
     background: var(--primary-grey);
     color: var(--white);
 }
-
 .not-found-span {
     font-size: 0.875rem;
     color: var(--primary-grey);
 }
-
 @keyframes dropdownAppear {
     from {
         opacity: 0;
@@ -450,7 +404,6 @@ input[type="text"] {
         transform: translateY(0) scale(1);
     }
 }
-
 .date-input-button {
     padding: 15px 24px;
     background: var(--white);
@@ -468,17 +421,14 @@ input[type="text"] {
     color: var(--primary-grey);
     line-height: 1;
 }
-
 .date-input-button img {
     width: 20px;
     height: 20px;
     display: block;
 }
-
 .selected-border {
     border: 1px solid var(--primary-blue-train);
 }
-
 .calendar {
     background: #FFFFFF;
     border-radius: 12px;
@@ -487,18 +437,15 @@ input[type="text"] {
     width: 100%;
     position: relative;
 }
-
 .calendar .months {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
 }
-
 .calendar .month {
     min-width: 0;
     width: 100%;
 }
-
 .calendar-header {
     width: 100%;
     display: grid;
@@ -506,8 +453,6 @@ input[type="text"] {
     align-items: center;
     margin-bottom: 16px;
 }
-
-
 .calendar-header .month-year {
     width: 100%;
     text-align: center;
@@ -516,7 +461,6 @@ input[type="text"] {
     font-weight: 600;
     white-space: nowrap;
 }
-
 .nav-btn {
     height: clamp(15px, 2.5dvw, 20px);
     width: 20px;
@@ -528,26 +472,19 @@ input[type="text"] {
     border-radius: 8px;
     cursor: pointer;
 }
-
 .nav-btn img {
     max-width: 80%;
     height: auto;
 }
-
 .nav-btn:hover {
     background: #F1F3F7;
 }
-
 .header-spacer { width: clamp(15px, 2.5dvw, 20px); }
-
 .calendar-body .weekdays, .calendar-body .dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     row-gap: 4px;
 }
-
-
-
 .empty, .weekdays span, .date {
     width: 100%;
     aspect-ratio: 1 / 1; /* делает ячейку квадратной */
@@ -557,15 +494,12 @@ input[type="text"] {
     border: none;
     background: transparent;
 }
-
 .empty, .date {
     font-size: clamp(0.4rem, 1.3dvw, 1rem);
 }
-
 .weekdays span {
     font-size: clamp(0.4rem, 1.2dvw, 0.95rem);
 }
-
 .circle {
     width: 100%;
     height: 100%;
@@ -575,22 +509,18 @@ input[type="text"] {
     align-items: center;
     justify-content: center;
 }
-
 .calendar-body .dates .date.range-start {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
-
 .calendar-body .dates .date.range-end {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-
 .calendar-body .dates .date:hover {
     background: #EFF4FF;
     color: var(--primary-blue-train);
 }
-
 .calendar-footer {
     display: flex;
     justify-content: flex-end;
@@ -598,26 +528,22 @@ input[type="text"] {
     padding-top: 16px;
     gap: 16px;
 }
-
 .calendar-body .dates .date.selected-date .circle {
     background-color: #0578FF;
     color: #fff;
     border-radius: 50%;
 }
-
 .date.in-range {
     background-color: #F1F3F7;
     color: var(--primary-black);
     border-radius: 0;
 }
-
 .reset-btn {
     border: none;
     background: transparent;
     color: var(--primary-grey);
     cursor: pointer;
 }
-
 .apply-btn {
     border: none;
     background: var(--primary-blue-train);
@@ -626,12 +552,11 @@ input[type="text"] {
     border-radius: 8px;
     cursor: pointer;
 }
-
 .reset-btn:hover, .apply-btn:hover {
     transform: scale(1.1);
 }
 
-
+/*Модальные окна*/
 .modal {
     position: absolute;
     top: 0; left: 0;
@@ -645,12 +570,10 @@ input[type="text"] {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .modal.show {
     opacity: 1;
     pointer-events: auto;
 }
-
 .modal-content {
     background: white;
     padding: 5px;
@@ -660,22 +583,18 @@ input[type="text"] {
     max-width: 800px; /* ограничение ширины */
     text-align: center;
 }
-
 .modal-stations {
     margin-top: -14dvh;
 }
-
 .modal-dates, .modal-choose {
     margin-top: -4dvh;
 }
-
 .modal-submit {
     margin-top: 30dvh;
 }
 .modal-content H4, .modal-content button {
     font-size: clamp(0.4rem, 1dvw, 0.8rem);
 }
-
 .modal-content button {
     border: none;
     background: none;
@@ -685,7 +604,6 @@ input[type="text"] {
     border-radius: 0;
     padding: 3px 10px;
 }
-
 .modal-content button:hover {
     background: rgba(221, 236, 255, 0.5);
     border-radius: 10px;
@@ -694,6 +612,7 @@ input[type="text"] {
     transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
+/*Блок с фактами*/
 .interesting-facts-container {
     background: var(--primary-blue-train);
 }
@@ -706,28 +625,24 @@ input[type="text"] {
     gap: clamp(64px, 8dvw, 229px);
     justify-content: center;
 }
-
 .interesting-facts-block {
     display: flex;
     gap: clamp(64px, 8dvw, 229px);
     justify-content: space-between;
     align-items: start;
 }
-
 .fact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .fact-number {
     color: var(--white);
     font-weight: 700;
     font-size: clamp(1rem, 7dvw, 3.125rem);
     text-align: center;
 }
-
 .fact-description {
     color: var(--white);
     font-weight: 500;
@@ -735,10 +650,51 @@ input[type="text"] {
     text-align: center;
 }
 
+/*Блок с картинками*/
+.find-your-dream {
+    padding-top: 128px;
+    padding-bottom: 128px;
+    align-items: center;
+}
+.image-block {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    position: relative;
+}
+.image-block1 {
+    width: calc(45% - 16px);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+}
+.image1, .image2 {
+    width: 100%;
+    height: auto;
+}
+.image-block2 {
+    width: calc(55% - 16px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    row-gap: 24px;
+}
+.image3, .image4 {
+    width: calc(50% - 16px);
+    height: auto;
+}
+.image5 {
+    width: 100%;
+    height: auto;
+}
+.dream-image {
+    border-radius: 10px;
+    object-fit: cover;
+}
 
 
-
-
+/*Скрытые и недоступные элементы*/
 .hidden-title {
     visibility: hidden;
 }
@@ -760,7 +716,7 @@ input[type="text"] {
 
 
 
-
+/*Адаптивность для максимальной ширины 768px*/
 @media screen and (max-width: 768px) {
     .container {
         padding-inline: 32px;
@@ -779,7 +735,7 @@ input[type="text"] {
         display: none;
     }
     H1 {
-        font-size: clamp(1.5rem, 8.5dvw, 4rem);
+        font-size: clamp(0.8rem, 8.5dvw, 4rem);
     }
     .person-icon {
         width: clamp(12px, 2.5dvw, 18px);
@@ -802,7 +758,6 @@ input[type="text"] {
     .modal-content H4, .modal-content button {
         font-size: clamp(0.4rem, 2dvw, 0.8rem);
     }
-
     .interesting-facts {
         flex-wrap: wrap;
         gap: 40px;
@@ -815,8 +770,15 @@ input[type="text"] {
     .fact-description {
         font-size: clamp(0.5rem, 3dvw, 1.25rem);;
     }
+    .image-block1 {
+        width: 100%;
+    }
+    .image-block2 {
+        width: 100%;
+    }
 }
 
+/*Адаптивность для максимальной ширины 360px*/
 @media screen and (max-width: 360px) {
     .container {
         padding-inline: 20px;
@@ -894,5 +856,13 @@ input[type="text"] {
         gap: clamp(5px, 4dvw, 30px);
         flex-direction: row-reverse;
         flex-wrap: nowrap;
+    }
+    .find-your-dream {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .image3, .image4 {
+        width: 100%;
+        height: auto;
     }
 }
