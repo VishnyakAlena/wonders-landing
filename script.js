@@ -153,7 +153,6 @@ const STATIONS = [
     "Kranjska Gora Avtobusna Postaja"
 ];
 
-
 //Departure
 
 const departureInput = document.getElementById('departure-input')
@@ -328,11 +327,7 @@ window.closeCheckStations = closeCheckStations;
 
 
 
-
-
-const dateInputButton = document.querySelector('.date-input-button')
 const calendarBlock = document.querySelector('.calendar')
-const dateLabel = dateInputButton.querySelector('.date-label')
 const leftMonthYearEl = document.querySelector('.left-month-year')
 const rightMonthYearEl = document.querySelector('.right-month-year')
 const prevMonthBtn = document.querySelector('.prev-month-button')
@@ -416,7 +411,7 @@ class Calendar {
     #updateNextDate() {
         const year = this.#currentDate.getFullYear()
         const month = this.#currentDate.getMonth()
-        this.#nextDate = new Date(year, month + 1, 1) // В следующем месяце число сбрасываем на 1-е, чтобы избежать перепрыгивания через месяц, так как если этого не сделать, а просто месяц текущей даты увеличить на 1, то в случае, если в текущем месяце количество дней больше, чем в следующем, то в последний день текущего месяца следующий месяц перескочит через 1 (например последний день октября 31-е число, а в ноябре 30 дней, то 31 октября увеличивая месяц на 1 будет искаться день 31 ноября и не найдя его дата перескочит на 1 декабря, в результате 31 октября текущий месяц будет отражаться октябрь, а следующий декабрь
+        this.#nextDate = new Date(year, month + 1, 1) // В следующем месяце число сбрасываем на 1-е, чтобы избежать перепрыгивания через месяц, так как если этого не сделать, а просто месяц текущей даты увеличить на 1, то в случае, если в текущем месяце количество дней больше, чем в следующем, то в последний день текущего месяца следующий месяц перескочит через 1 (например последний день октября 31-е число, а в ноябре 30 дней, то 31 октября увеличивая месяц на 1 будет искаться день, которого нет, так как в ноябре 30 дней, и не найдя его дата перескочит на 1 декабря, в результате 31 октября текущий месяц будет отражаться октябрь, а следующий декабрь
     }
 
     #goPrevMonth(){

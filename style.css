@@ -57,7 +57,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
-    gap: clamp(12px, 2vw, 96px);
+    gap: clamp(12px, 2dvw, 96px);
 }
 
 .logo-and-text {
@@ -68,11 +68,11 @@ a {
 }
 
 .logo-icon {
-    width: clamp(62px, 5.2vw, 73px);
+    width: clamp(62px, 5.2dvw, 73px);
 }
 
 .logo-text {
-    font-size: clamp(1.8rem, 3.5vw, 2.125rem);
+    font-size: clamp(1.8rem, 3.5dvw, 2.125rem);
 }
 
 .logo-and-text:hover {
@@ -85,14 +85,14 @@ a {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: clamp(1.1rem, 1.75vw, 1.25rem);
+    font-size: clamp(1.1rem, 1.75dvw, 1.25rem);
     line-height: 135%;
     padding-left: 10px;
-    gap: clamp(2px, 0.3vw, 10px);
+    gap: clamp(2px, 0.3dvw, 10px);
 }
 
 .header-navigation a {
-    padding-inline: clamp(5px, 0.7vw, 10px);
+    padding-inline: clamp(5px, 0.7dvw, 10px);
     text-align: center;
     white-space: nowrap;
 }
@@ -189,10 +189,6 @@ a {
     }
 }
 
-
-
-
-
 .container-ticket-order {
     padding-top: 64px;
     padding-bottom: 128px;
@@ -220,12 +216,12 @@ a {
 H1 {
     text-transform: capitalize;
     font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(1.5rem, 4dvw, 4rem);
 }
 
 .ticket-order-text {
     margin: 32px 0;
-    font-size: clamp(0.5rem, 1.05vw, 1rem);
+    font-size: clamp(0.5rem, 1.05dvw, 1rem);
 }
 
 
@@ -243,7 +239,7 @@ H1 {
     align-items: center;
     border: none;
     border-radius: 10px;
-    padding: 16px 24px;
+    padding-inline: 24px;
     height: 53px;
     background: var(--white);
     font-weight: 500;
@@ -258,7 +254,7 @@ H1 {
     justify-content: center;
     white-space: nowrap;
     height: 100%; /* чтобы занять всю высоту grid-ячейки */
-    font-size: clamp(0.6rem, 1.6vw, 0.875rem);
+    font-size: clamp(0.6rem, 1.6dvw, 0.875rem);
 }
 
 .radio-option input[type="radio"] {
@@ -269,17 +265,14 @@ H1 {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #ccc; /* серый фон для невыбранного */
+    background-color: var(--primary-grey); /* серый фон для невыбранного */
     transition: all 0.2s ease;
-
 }
 
 .radio-option input[type="radio"]:checked + .custom-radio {
     background-color: transparent;
-    border: 3px solid #0578ff;
+    border: 3px solid var(--primary-blue-train);
 }
-
-
 
 .person-quantity {
     display: flex;
@@ -290,7 +283,7 @@ H1 {
 }
 
 .person-icon {
-    width: clamp(8px, 2vw, 18px);
+    width: clamp(8px, 2dvw, 18px);
 }
 
 .counter {
@@ -298,7 +291,6 @@ H1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
     background: var(--white);
     gap: 0.2rem;
 }
@@ -313,8 +305,7 @@ H1 {
 
 .counter span {
     font-weight: 500;
-    font-size: clamp(0.5rem, 1.5vw, 0.875rem);
-    line-height: 157%;
+    font-size: clamp(0.5rem, 1.5dvw, 0.875rem);
     text-align: center;
 }
 
@@ -350,7 +341,7 @@ H1 {
     width: 100%;
     background: var(--primary-blue);
     font-weight: 700;
-    font-size: clamp(1.1rem, 2.1vw, 1.25rem);
+    font-size: clamp(1.1rem, 2.1dvw, 1.25rem);
     text-transform: capitalize;
     color: var(--white);
 }
@@ -367,7 +358,7 @@ H1 {
 
 .input-container label, H4{
     font-weight: 600;
-    font-size: clamp(0.4rem, 1.6vw, 1rem);
+    font-size: clamp(0.4rem, 1.6dvw, 1rem);
     line-height: 150%;
 }
 input {
@@ -392,7 +383,7 @@ input {
 
 .departure-input::placeholder, .arrival-input::placeholder {
     color: var(--primary-grey);
-    font-size: clamp(0.4rem, 1.4vw, 0.875rem);
+    font-size: clamp(0.4rem, 1.4dvw, 0.875rem);
 }
 
 .input-wrapper {
@@ -432,7 +423,7 @@ input[type="text"] {
 
 .autocomplete-dropdown li {
     padding: 4px 12px;
-    font-size: clamp(0.4rem, 1.4vw, 0.875rem);
+    font-size: clamp(0.4rem, 1.4dvw, 0.875rem);
     line-height: 150%;
     border-radius: 6px;
     cursor: pointer;
@@ -473,7 +464,7 @@ input[type="text"] {
     height: 53px;
 }
 .date-label {
-    font-size: clamp(0.4rem, 1.3vw, 0.875rem);
+    font-size: clamp(0.4rem, 1.3dvw, 0.875rem);
     color: var(--primary-grey);
     line-height: 1;
 }
@@ -521,13 +512,13 @@ input[type="text"] {
     width: 100%;
     text-align: center;
     color: var(--primary-black);
-    font-size: clamp(0.4rem, 1vw, 1rem);
+    font-size: clamp(0.4rem, 1dvw, 1rem);
     font-weight: 600;
     white-space: nowrap;
 }
 
 .nav-btn {
-    height: clamp(15px, 2.5vw, 20px);
+    height: clamp(15px, 2.5dvw, 20px);
     width: 20px;
     border: none;
     background: transparent;
@@ -547,7 +538,7 @@ input[type="text"] {
     background: #F1F3F7;
 }
 
-.header-spacer { width: clamp(15px, 2.5vw, 20px); }
+.header-spacer { width: clamp(15px, 2.5dvw, 20px); }
 
 .calendar-body .weekdays, .calendar-body .dates {
     display: grid;
@@ -568,11 +559,11 @@ input[type="text"] {
 }
 
 .empty, .date {
-    font-size: clamp(0.4rem, 1.3vw, 1rem);
+    font-size: clamp(0.4rem, 1.3dvw, 1rem);
 }
 
 .weekdays span {
-    font-size: clamp(0.4rem, 1.2vw, 0.95rem);
+    font-size: clamp(0.4rem, 1.2dvw, 0.95rem);
 }
 
 .circle {
@@ -662,7 +653,7 @@ input[type="text"] {
 
 .modal-content {
     background: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 100%;
@@ -671,18 +662,18 @@ input[type="text"] {
 }
 
 .modal-stations {
-    margin-top: -14vh;
+    margin-top: -14dvh;
 }
 
 .modal-dates, .modal-choose {
-    margin-top: -25vh;
+    margin-top: -4dvh;
 }
 
 .modal-submit {
-    margin-top: -10vh;
+    margin-top: 30dvh;
 }
 .modal-content H4, .modal-content button {
-    font-size: clamp(0.4rem, 1vw, 0.8rem);
+    font-size: clamp(0.4rem, 1dvw, 0.8rem);
 }
 
 .modal-content button {
@@ -703,12 +694,9 @@ input[type="text"] {
     transition: background 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
-
-
 .interesting-facts-container {
     background: var(--primary-blue-train);
 }
-
 .interesting-facts {
     max-width: 1440px;
     width: 100%;
@@ -754,19 +742,13 @@ input[type="text"] {
 .hidden-title {
     visibility: hidden;
 }
-
-
 .date-input-button.disabled {
     background: rgba(5, 120, 255, 0.1);
     cursor: not-allowed !important;
-
 }
-
 .not-allowed {
     cursor: not-allowed !important;
 }
-
-
 .hidden {
     display: none;
 }
@@ -797,31 +779,28 @@ input[type="text"] {
         display: none;
     }
     H1 {
-        font-size: clamp(1.5rem, 8.5vw, 4rem);
+        font-size: clamp(1.5rem, 8.5dvw, 4rem);
     }
     .person-icon {
-        width: clamp(12px, 2.5vw, 18px);
+        width: clamp(12px, 2.5dvw, 18px);
     }
     .counter span {
-        font-size: clamp(0.5rem, 2.5vw, 0.875rem);
+        font-size: clamp(0.5rem, 2.5dvw, 0.875rem);
     }
     .ticket-order-text {
-        font-size: clamp(0.3rem, 1.9vw, 1rem);
+        font-size: clamp(0.3rem, 1.9dvw, 1rem);
     }
     .input-container label, H4{
-        font-size: clamp(0.4rem, 3vw, 1rem);
+        font-size: clamp(0.4rem, 3dvw, 1rem);
     }
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
-        font-size: clamp(0.4rem, 3vw, 0.875rem);
+        font-size: clamp(0.4rem, 3dvw, 0.875rem);
     }
     .calendar-header .month-year, .empty, .weekdays span, .date {
-        font-size: clamp(0.4rem, 2vw, 1rem);
+        font-size: clamp(0.4rem, 2dvw, 1rem);
     }
     .modal-content H4, .modal-content button {
-        font-size: clamp(0.4rem, 2vw, 0.8rem);
-    }
-    .modal-dates {
-        margin-top: -26vh;
+        font-size: clamp(0.4rem, 2dvw, 0.8rem);
     }
 
     .interesting-facts {
@@ -842,6 +821,9 @@ input[type="text"] {
     .container {
         padding-inline: 20px;
     }
+    .header-container {
+        padding-bottom: 20px;
+    }
     .burger-menu nav {
         margin-top: clamp(18px, 8dvh, 64px);
         padding-inline: 20px;
@@ -854,7 +836,16 @@ input[type="text"] {
         display: none
     }
     .container-ticket-order {
-        padding-bottom: 144px;
+        padding-top: 24px;
+    }
+    .custom-radio {
+        width: 10px;
+        height: 10px;
+    }
+    .choose-trip label {
+        white-space: wrap;
+        font-size: clamp(0.3rem, 2.5dvw, 0.875rem);
+        line-height: 1;
     }
     .station-input-container, .date-input-container {
         width: 100%;
@@ -866,13 +857,13 @@ input[type="text"] {
         display: none;
     }
     .ticket-order-text {
-        font-size: clamp(0.3rem, 2.2vw, 0.6875rem);
+        font-size: clamp(0.3rem, 2.2dvw, 0.6875rem);
     }
     .input-container label, H4{
-        font-size: clamp(0.4rem, 4vw, 1rem);
+        font-size: clamp(0.4rem, 4dvw, 1rem);
     }
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
-        font-size: clamp(0.4rem, 4vw, 0.875rem);
+        font-size: clamp(0.4rem, 4dvw, 0.875rem);
     }
     .calendar {
         padding: 16px;
@@ -882,16 +873,19 @@ input[type="text"] {
         gap: 48px;
     }
     .calendar-header .month-year, .empty, .weekdays span, .date {
-        font-size: clamp(0.4rem, 3.5vw, 1rem);
+        font-size: clamp(0.4rem, 3.5dvw, 1rem);
     }
     .modal-content H4, .modal-content button {
-        font-size: clamp(0.4rem, 2vw, 0.6rem);
+        font-size: clamp(0.4rem, 2dvw, 0.6rem);
     }
-    .modal-dates {
-        margin-top: -38vh;
+    .modal-dates, .modal-choose {
+        margin-top: 28dvh;
+    }
+    .modal-submit {
+        margin-top: 53dvh;
     }
     .ticket-order-button {
-        font-size: clamp(0.6rem, 4vw, 1.25rem);
+        font-size: clamp(0.6rem, 4dvw, 1.25rem);
     }
     .interesting-facts {
         gap: 30px;
