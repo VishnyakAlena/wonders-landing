@@ -65,12 +65,6 @@
                                             <button type="button" class="change-counter counter-increase active-button" id="increase">+</button>
                                         </div>
                                     </div>
-                                    <div id="custom-alert-submit" class="modal">
-                                        <div class="modal-content modal-submit">
-                                            <H4>Please complete all required fields.</H4>
-                                            <button type="button" onclick="closeAlertSubmit()">OK</button>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="choose-station">
                                     <div class="input-container station-input-container">
@@ -174,8 +168,8 @@
                                             <button type="button" onclick="closeAlertDates()">OK</button>
                                         </div>
                                     </div>
-                                    <div id="custom-alert-choose" class="modal modal-choose">
-                                        <div class="modal-content">
+                                    <div id="custom-alert-choose" class="modal">
+                                        <div class="modal-content modal-choose">
                                             <H4>You have not selected a departure and/or return date.</H4>
                                             <button type="button" onclick="closeAlertChoose()">OK</button>
                                         </div>
@@ -184,6 +178,12 @@
 
 
                                 <button class="ticket-order-button" type="submit">Find My Alpine Ride</button>
+                                <div id="custom-alert-submit" class="modal">
+                                    <div class="modal-content modal-submit">
+                                        <H4>Please complete all required fields.</H4>
+                                        <button type="button" onclick="closeAlertSubmit()">OK</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
