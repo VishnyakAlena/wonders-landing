@@ -696,13 +696,12 @@ input[type="text"] {
     border-radius: 10px;
     object-fit: cover;
 }
+/*Блок с ссылками на приложения*/
 .app-container {
     background: var(--good-yellow);
     padding-top: 116px;
     padding-bottom: 128px;
 }
-
-
 .downloads-icons {
     max-width: 863px;
     width: 100%;
@@ -712,13 +711,55 @@ input[type="text"] {
     justify-content: space-between;
     margin-inline: auto;
 }
-
-
 .app-link:hover {
     background: none;
     transform: scale(1.1);
 }
 
+/*Блок с вопросами и ответами*/
+.faqs-container {
+    padding-top: 128px;
+    padding-bottom: 128px;
+
+}
+.faqs-block {
+    width: 100%;
+    margin-bottom: 128px;
+    margin-top: 40px;
+}
+details {
+    position: relative;
+    border-bottom: 1px solid rgba(32, 32, 32, 0.5);
+}
+details[open]{
+    padding: 16px 0;
+    font-size: 1rem;
+    line-height: 140%;
+}
+/*Плюс для раскрытия*/
+details summary::after {
+    content: '\002B';
+    margin-left: 10px;
+}
+/*Крестик для закрытия*/
+details[open] summary::after {
+    content: '\00D7';
+}
+summary {
+    display: flex;
+    justify-content: space-between; /* текст слева, иконка справа */
+    align-items: center;
+    font-weight: 500;
+    padding: 16px 0;
+    font-size: 1.125rem;
+    line-height: 120%;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+    list-style-type: none;
+}
+summary:hover {
+    transform: translateX(1%) scale(0.979);
+}
 
 /*Скрытые и недоступные элементы*/
 .hidden-title {
