@@ -45,9 +45,13 @@ H2 {
     font-weight: 700;
     font-size: clamp(0.8rem, 7dvw, 4rem);
 }
-H1, H2 {
+H1, H2, H3 {
     font-weight: 700;
     white-space: nowrap;
+}
+H3 {
+    font-size: clamp(1.85rem, 5dvw, 3.875rem);
+    text-align: center;
 }
 
 /*Блок с фоном градиентом, включает несколько секций*/
@@ -692,6 +696,28 @@ input[type="text"] {
     border-radius: 10px;
     object-fit: cover;
 }
+.app-container {
+    background: var(--good-yellow);
+    padding-top: 116px;
+    padding-bottom: 128px;
+}
+
+
+.downloads-icons {
+    max-width: 863px;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-inline: auto;
+}
+
+
+.app-link:hover {
+    background: none;
+    transform: scale(1.1);
+}
 
 
 /*Скрытые и недоступные элементы*/
@@ -775,6 +801,15 @@ input[type="text"] {
     }
     .image-block2 {
         width: 100%;
+    }
+    H3 {
+        white-space: wrap;
+    }
+    .downloads-icons {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        gap: 50px;
+        row-gap: 30px;
     }
 }
 
