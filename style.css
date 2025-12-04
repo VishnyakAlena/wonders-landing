@@ -86,6 +86,7 @@ H3 {
 }
 .logo-text {
     font-size: clamp(1.8rem, 3.5dvw, 2.125rem);
+    line-height: 1;
 }
 .logo-and-text:hover {
     text-decoration: none;
@@ -663,7 +664,7 @@ input[type="text"] {
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: clamp(16px, 3dvw,32px);
     position: relative;
 }
 .image-block1 {
@@ -680,7 +681,7 @@ input[type="text"] {
     width: calc(55% - 16px);
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: clamp(16px, 2.5dvw,32px);;
     row-gap: 24px;
 }
 .image3, .image4 {
@@ -762,12 +763,66 @@ summary:hover {
 
 /*Свойства для footer*/
 footer {
-    height: calc(472px + 404px);
     background: var(--primary-blue);
     z-index: 1;
     position: relative;
+    padding-top: 468px;
+    padding-bottom: 76px;
 }
 
+/*Свойства для блока с ссылками в footer*/
+.footer-links-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.footer-logo-text {
+    color: var(--white);
+}
+.logo-block {
+    width: 50%;
+}
+.links-blocks {
+    width: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+}
+.links-block {
+    width: calc(33% - 16px);
+    text-align: left;
+}
+
+.links-block H4 {
+    color: var(--white);
+    font-size: clamp(1rem, 2.2dvw, 1.25rem);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-link {
+    display: inline-block;
+    color: var(--white);
+    font-size: clamp(0.8rem, 2dvw, 1rem);
+    letter-spacing: -0.02em;
+    transition: transform 0.1s ease-in-out;
+    margin-bottom: 15px;
+}
+.footer-link:hover {
+    transform: scale(1.1);
+}
+.copyright {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-top: 40px;
+}
 /*Свойства для блока с контактами*/
 .contacts {
     border: 1px solid rgba(32, 32, 32, 0.5);
@@ -790,7 +845,8 @@ footer {
 .contacts a {
     display: block;
     text-align: center;
-    font-size: clamp(1.25rem, 5dvw, 1.75rem);
+    font-size: clamp(1.25rem, 3dvw, 1.75rem);
+    transition: transform 0.1s ease-in-out;
 }
 .contacts p {
     text-align: center;
@@ -799,7 +855,6 @@ footer {
 }
 .contacts a:hover {
     transform: scale(1.1);
-    transition: transform 0.1s ease-in-out;
 }
 
 
@@ -853,7 +908,7 @@ footer {
         font-size: clamp(0.5rem, 2.5dvw, 0.875rem);
     }
     .ticket-order-text {
-        font-size: clamp(0.6875rem, 2.2dvw, 1rem);
+        font-size: clamp(0.6875rem, 2.5dvw, 1rem);
     }
     .input-container label, H4{
         font-size: clamp(0.4rem, 3dvw, 1rem);
@@ -897,6 +952,22 @@ footer {
     .contacts {
         padding-inline: 46px;
     }
+    .footer-links-container {
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+    .logo-block {
+        width: 100%;
+    }
+    .links-blocks {
+        width: 100%;
+    }
+    .links-block H4 {
+        font-size: clamp(1rem, 3.5dvw, 1.25rem);
+    }
+    .footer-link {
+        font-size: clamp(0.8rem, 3.5dvw, 1rem);
+    }
 }
 
 /*Адаптивность для максимальной ширины 360px*/
@@ -939,7 +1010,7 @@ footer {
     .hidden-title {
         display: none;
     }
-   .input-container label, H4{
+   .input-container label, H4 {
         font-size: clamp(0.4rem, 4dvw, 1rem);
     }
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
@@ -988,5 +1059,21 @@ footer {
     }
     .contacts p {
         white-space: nowrap;
+    }
+    .links-blocks {
+        flex-wrap: wrap;
+        row-gap: 24px;
+    }
+    .links-block {
+        width: calc(50% - 16px);
+        }
+    .footer-link {
+        font-size: clamp(0.9rem, 4.5dvw, 1rem);
+    }
+    .copyright br {
+        display: none; /* убираем перенос строки */
+    }
+    .ticket-order-text br {
+        display: none; /* убираем перенос строки */
     }
 }
