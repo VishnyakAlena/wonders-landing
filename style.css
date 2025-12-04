@@ -210,8 +210,7 @@ H3 {
 }
 .ticket-order-text {
     margin: 32px 0;
-    font-size: clamp(0.5rem, 1.05dvw, 1rem);
-    white-space: nowrap;
+    font-size: clamp(0.6875rem, 1.05dvw, 1rem);
 }
 .ticket-order-form {
     display: flex;
@@ -854,7 +853,7 @@ footer {
         font-size: clamp(0.5rem, 2.5dvw, 0.875rem);
     }
     .ticket-order-text {
-        font-size: clamp(0.3rem, 1.9dvw, 1rem);
+        font-size: clamp(0.6875rem, 2.2dvw, 1rem);
     }
     .input-container label, H4{
         font-size: clamp(0.4rem, 3dvw, 1rem);
@@ -940,10 +939,7 @@ footer {
     .hidden-title {
         display: none;
     }
-    .ticket-order-text {
-        font-size: clamp(0.3rem, 2.2dvw, 0.6875rem);
-    }
-    .input-container label, H4{
+   .input-container label, H4{
         font-size: clamp(0.4rem, 4dvw, 1rem);
     }
     .departure-input::placeholder, .arrival-input::placeholder, .date-label, .autocomplete-dropdown li {
