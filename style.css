@@ -761,6 +761,49 @@ summary:hover {
     transform: translateX(1%) scale(0.979);
 }
 
+/*Свойства для footer*/
+footer {
+    height: calc(472px + 404px);
+    background: var(--primary-blue);
+    z-index: 1;
+    position: relative;
+}
+
+/*Свойства для блока с контактами*/
+.contacts {
+    border: 1px solid rgba(32, 32, 32, 0.5);
+    border-radius: 10px;
+    padding: 60px 137px;
+    margin-inline: auto;
+    background: #fff;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -121px;
+
+}
+.contacts H2 {
+    margin-bottom: 30px;
+    font-size: clamp(2.25rem, 7dvw, 4rem);
+    text-align: center;
+}
+.contacts a {
+    display: block;
+    text-align: center;
+    font-size: clamp(1.25rem, 5dvw, 1.75rem);
+}
+.contacts p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.125rem;
+}
+.contacts a:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+
 /*Скрытые и недоступные элементы*/
 .hidden-title {
     visibility: hidden;
@@ -852,6 +895,9 @@ summary:hover {
         gap: 50px;
         row-gap: 30px;
     }
+    .contacts {
+        padding-inline: 46px;
+    }
 }
 
 /*Адаптивность для максимальной ширины 360px*/
@@ -940,5 +986,11 @@ summary:hover {
     .image3, .image4 {
         width: 100%;
         height: auto;
+    }
+    .contacts {
+        padding-inline: 20px;
+    }
+    .contacts p {
+        white-space: nowrap;
     }
 }
