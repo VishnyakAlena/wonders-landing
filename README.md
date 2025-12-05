@@ -42,7 +42,7 @@ wonders-landing/
    git clone https://github.com/VishnyakAlena/wonders-landing
    ```
 2. Открыть index.html в браузере.
-3. Для деплоя используйте GitHub Pages или любой хостинг.
+3. Ссылка на GitHub Pages - https://vishnyakalena.github.io/wonders-landing/.
 
 ## Функционал
 - Поиск маршрутов: поля "Откуда" и "Куда" с автодополнением, значения которых не могут совпадать, в противном случае появляется модальное окно с уведомлением.
