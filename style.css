@@ -563,7 +563,7 @@ input[type="text"] {
 
 /*Модальные окна*/
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(221, 236, 255, 0.3);
@@ -581,22 +581,15 @@ input[type="text"] {
 }
 .modal-content {
     background: white;
-    padding: 5px;
+    padding: 20px;
+    margin-inline: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    width: 100%;
+    width: fit-content;
     max-width: 800px; /* ограничение ширины */
     text-align: center;
 }
-.modal-stations {
-    margin-top: -14dvh;
-}
-.modal-dates, .modal-choose {
-    margin-top: -4dvh;
-}
-.modal-submit {
-    margin-top: 30dvh;
-}
+
 .modal-content H4, .modal-content button {
     font-size: clamp(0.4rem, 1dvw, 0.8rem);
 }
