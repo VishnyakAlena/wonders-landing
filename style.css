@@ -614,14 +614,10 @@ input[type="text"] {
     width: 100%;
     padding-top: 60px;
     padding-bottom: 60px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: clamp(64px, 8dvw, 229px);
     justify-content: center;
-}
-.interesting-facts-block {
-    display: flex;
-    gap: clamp(64px, 8dvw, 229px);
-    justify-content: space-between;
     align-items: start;
 }
 .fact {
@@ -914,16 +910,16 @@ ul {
         font-size: clamp(0.4rem, 2.2dvw, 1rem);
     }
     .interesting-facts {
-        flex-wrap: wrap;
-        gap: 40px;
-    }
-    .interesting-facts-block {
-        width: 100%;
-        padding-inline: clamp(30px, 13dvw, 90px);
-        gap: clamp(32px, 4dvw, 128px);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: fit-content;
+        height: fit-content;
+        margin-inline: auto;
+        gap: clamp(64px, 12dvw, 128px);
+        row-gap: 40px;
     }
     .fact-description {
-        font-size: clamp(0.5rem, 3dvw, 1.25rem);;
+        font-size: clamp(0.5rem, 3dvw, 1.25rem);
     }
     .image-block {
         gap: clamp(12px, 3dvw, 24px);
@@ -1039,13 +1035,15 @@ ul {
         font-size: clamp(0.6rem, 5dvw, 1.25rem);
     }
     .interesting-facts {
-        gap: 30px;
+        gap: clamp(32px, 14dvw, 40px);
+        direction: rtl;
+        row-gap: 30px;
+
     }
-    .interesting-facts-block {
-        gap: clamp(5px, 4dvw, 30px);
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
+    .fact {
+        direction: ltr;
     }
+
     .find-your-dream {
         padding-top: 64px;
         padding-bottom: 64px;
