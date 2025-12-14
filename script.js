@@ -195,9 +195,13 @@ function renderDepartureStations(value) {
     // не найдена ни одна станция
     if (filteredDepartureListElements.length < 1) {
         departureAutocompleteDropdown.innerHTML = `<span class="not-found-span">Not found</span>`
+        departureAutocompleteDropdown.style.textAlign = 'center'
+        departureAutocompleteDropdown.style.height = 'auto'
     }
     else {
         departureAutocompleteDropdown.append(...filteredDepartureListElements) //append(li, li, li)
+        departureAutocompleteDropdown.style.textAlign = 'left'
+        departureAutocompleteDropdown.style.height = '110px'
     }
 }
 
@@ -274,9 +278,13 @@ function renderArrivalStations(value) {
     // не найдена ни одна станция
     if (filteredArrivalListElements.length < 1) {
         arrivalAutocompleteDropdown.innerHTML = `<span class="not-found-span">Not found</span>`
+        arrivalAutocompleteDropdown.style.textAlign = 'center'
+        arrivalAutocompleteDropdown.style.height = 'auto'
     }
     else {
         arrivalAutocompleteDropdown.append(...filteredArrivalListElements) //append(li, li, li)
+        arrivalAutocompleteDropdown.style.textAlign = 'left'
+        arrivalAutocompleteDropdown.style.height = '110px'
     }
 }
 
